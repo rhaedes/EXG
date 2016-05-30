@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="sitecore\shell\client\EXG\assets\app.js" />
+    <Content Include="sitecore\shell\client\EXG\assets\grid.css" />
     <Content Include="sitecore\shell\client\EXG\Layouts\Layouts\ReactLayout.cshtml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
@@ -103,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Config\Include\" />
-    <Folder Include="sitecore\shell\client\EXG\assets\" />
     <Folder Include="sitecore\shell\client\EXG\Layouts\Renderings\" />
   </ItemGroup>
   <ItemGroup>
