@@ -1,0 +1,82 @@
+----item----
+version: 1
+id: {F4E82A0C-0981-43A9-A998-E2F2B93BE7FA}
+database: core
+path: /sitecore/client/Applications/EXG/Home
+parent: {793A2561-558A-4AB5-87BB-C8C5AF2B961C}
+name: Home
+master: {7E756EF1-FF7E-4F36-92FF-AAEECB80C31C}
+template: {B174990B-37B1-4A60-9C7D-891B521E1B76}
+templatekey: Item
+created: 20160530T130052:636002100526670000
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{2F16F35E-BAD6-4816-A3C9-348D1D2AAE4E}
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 105
+
+<r>
+  <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{11B963F6-757D-4CA7-89B8-851EF56B9CB9}" />
+</r>
+----version----
+language: en
+version: 1
+revision: 744302ed-f6e5-46e0-9b31-fe181356fd68
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160530T130052Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+744302ed-f6e5-46e0-9b31-fe181356fd68
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160530T131249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
