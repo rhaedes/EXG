@@ -1,0 +1,10 @@
+# Declare files that will always have CRLF line endings on checkout.
+
+# * -text will ensure that end-of-line normalization should not be
+# attempted on any files regardless of user settings.
+
+* -text
+
+
+# Do not adjust line endings on Sitecore .item files
+*.item -text

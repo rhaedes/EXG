@@ -1,0 +1,9 @@
+{
+  "projectsettings": "..\\Components.Core.Items\\Components.Core.Items.scproj",
+  "cleanlist": [
+    "sitecore/shell/client/Business Component Library/version 2/"
+  ],
+  "dlllist": [
+    "Sitecore.Speak.Components*.dll"
+  ]
+}

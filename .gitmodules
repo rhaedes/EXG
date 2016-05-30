@@ -1,0 +1,3 @@
+[submodule "UTF.SPEAK"]
+	path = code/QA/UTF.SPEAK
+	url = http://tfs4dk1.dk.sitecore.net/tfs/PD-Products-01/Products/_git/Tools.UTF.Speak
