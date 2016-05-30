@@ -21,7 +21,7 @@
     <RootNamespace>Sitecore.EXG.Items</RootNamespace>
     <EnableCodeGeneration>false</EnableCodeGeneration>
     <ManageRoles>False</ManageRoles>
-    <SitecoreDatabase>master</SitecoreDatabase>
+    <SitecoreDatabase>core</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -30,11 +30,21 @@
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
     <SitecoreWebUrl>http://exg3</SitecoreWebUrl>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
-    <DisableFileDeployment>False</DisableFileDeployment>
+    <DisableFileDeployment>True</DisableFileDeployment>
     <SitecoreDeployFolder>C:\instances\8.1\ex3\Website</SitecoreDeployFolder>
     <EnableValidations>False</EnableValidations>
     <ValidationSettingsFilePath>.\Sitecore.EXG.Items_Debug.xml</ValidationSettingsFilePath>
     <SitecoreAccessGuid>804d6ca9-4bd2-4ff5-b38b-29af29c57db5</SitecoreAccessGuid>
+    <PackageName>Sitecore.EXG.Items</PackageName>
+    <PackageAuthor />
+    <PackagePublisher />
+    <PackageVersion />
+    <PackageReadme />
+    <SitecoreAssemblyPath />
+    <GeneratePackage>False</GeneratePackage>
+    <SeperateFilesAndItems>False</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -54,6 +64,19 @@
       <Project>{97aadc84-3d90-4a9b-b2e4-7bf6a62e66ba}</Project>
       <Name>Sitecore.EXG.Web</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreItem Include="sitecore\client.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Applications.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Applications\EXG.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
 </Project>
