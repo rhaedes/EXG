@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D8BF078D-B381-4941-9EC5-57E1089CEC2B}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.EXG.Web", "Sitecore.EXG.Web\Sitecore.EXG.Web.csproj", "{97AADC84-3D90-4A9B-B2E4-7BF6A62E66BA}"
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.EXG.Items", "Sitecore.EXG.Items\Sitecore.EXG.Items.scproj", "{37EE33F8-F84C-4E2F-8D2E-E38673A00E78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.EXG.Client", "Sitecore.EXG.Client\Sitecore.EXG.Client.csproj", "{26A4087F-A6CF-4445-A650-F16B8B04D8EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{37EE33F8-F84C-4E2F-8D2E-E38673A00E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37EE33F8-F84C-4E2F-8D2E-E38673A00E78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{37EE33F8-F84C-4E2F-8D2E-E38673A00E78}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{26A4087F-A6CF-4445-A650-F16B8B04D8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A4087F-A6CF-4445-A650-F16B8B04D8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A4087F-A6CF-4445-A650-F16B8B04D8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A4087F-A6CF-4445-A650-F16B8B04D8EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
