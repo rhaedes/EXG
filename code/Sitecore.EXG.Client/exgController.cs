@@ -3,12 +3,14 @@ using Sitecore.Services.Infrastructure.Web.Http;
 
 namespace Sitecore.EXG.Client
 {
+  using System.Web.Http;
 
-  [ServicesController("api/exg")] 
+  [ServicesController("test")] 
   
-    public class exg: ServicesApiController
+    public class exgController: ServicesApiController
 
     {
+
       public string Dashboard()
       {
         var output = "{ data: { visitsPerChannel: [ " + "{ \"label\": \"LandingPages\", \"value\": getRandomNumber() },"
