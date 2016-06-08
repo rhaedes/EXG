@@ -1,7 +1,7 @@
 {
   "projectsettings": "..\\Sitecore.EXG.Items\\Sitecore.EXG.Items.scproj",
   "cleanlist": [
-    "sitecore/shell/client//"
+    "sitecore/shell/client/Applications/EXG/"
   ],
   "dlllist": [
     "Sitecore.EXG*.dll"
