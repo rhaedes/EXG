@@ -10,7 +10,7 @@ namespace Sitecore.EXG.Client
     public class exgController: ServicesApiController
 
     {
-
+    [HttpGet]
       public string Dashboard()
       {
         var output = "{ data: { visitsPerChannel: [ " + "{ \"label\": \"LandingPages\", \"value\": getRandomNumber() },"
