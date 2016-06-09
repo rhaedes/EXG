@@ -23,7 +23,7 @@ namespace Sitecore.EXG.Client
     [System.Web.Http.HttpGet]
     public ActionResult Dashboard()
     {
-      var output = "{ \"data\": { \"visitsPerChannel\": [ " + "{ \"label\": \"LandingPages\", \"value\": " + GetRandomNumber()
+      var output = "{ \"chartsData\": { \"visitsPerChannel\": [ " + "{ \"label\": \"LandingPages\", \"value\": " + GetRandomNumber()
                    + " }," + "{ \"label\": \"RefURLs\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Search\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Campaigns\", \"value\": " + GetRandomNumber() + " },"
@@ -40,7 +40,6 @@ namespace Sitecore.EXG.Client
                    + "{ \"label\": \"October\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"November\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"December\", \"value\":" + GetRandomNumber() + " }" + "]" + "}" + "]" + "}}";
-
 
       return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
     }
