@@ -4,14 +4,17 @@ using Sitecore.Services.Infrastructure.Web.Http;
 namespace Sitecore.EXG.Client
 {
   using System;
+  using System.Globalization;
   using System.Web.Mvc;
-  using Newtonsoft.Json;
 
+  using Newtonsoft.Json;
 
   [ServicesController("ExgData")]
   public class exgController : ServicesApiController
 
   {
+    private static double progress = 0.01;
+
     private static readonly Random getrandom = new Random();
 
     private string GetRandomNumber()
@@ -19,17 +22,17 @@ namespace Sitecore.EXG.Client
       return getrandom.Next(0, 100).ToString();
     }
 
-
     [System.Web.Http.HttpGet]
     public ActionResult Dashboard()
     {
-      var output = "{ \"chartsData\": { \"visitsPerChannel\": [ " + "{ \"label\": \"LandingPages\", \"value\": " + GetRandomNumber()
-                   + " }," + "{ \"label\": \"RefURLs\", \"value\": " + GetRandomNumber() + " },"
+      var output = "{ \"chartsData\": { \"visitsPerChannel\": [ " + "{ \"label\": \"LandingPages\", \"value\": "
+                   + GetRandomNumber() + " }," + "{ \"label\": \"RefURLs\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Search\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Campaigns\", \"value\": " + GetRandomNumber() + " },"
-                   + "{ \"label\": \"Other\", \"value\": " + GetRandomNumber() + " }" + "]," + "\"monthlyDistribution\": ["
-                   + "{" + "\"key\": \"Monthly Distribution\"," + "\"values\": [" + "{ \"label\": \"January\", \"value\": "
-                   + GetRandomNumber() + " }," + "{ \"label\": \"February\", \"value\": " + GetRandomNumber() + " },"
+                   + "{ \"label\": \"Other\", \"value\": " + GetRandomNumber() + " }" + "],"
+                   + "\"monthlyDistribution\": [" + "{" + "\"key\": \"Monthly Distribution\"," + "\"values\": ["
+                   + "{ \"label\": \"January\", \"value\": " + GetRandomNumber() + " },"
+                   + "{ \"label\": \"February\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"March\", \"value\":" + GetRandomNumber() + " },"
                    + "{ \"label\": \"April\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Maj\", \"value\": " + GetRandomNumber() + " },"
@@ -43,7 +46,6 @@ namespace Sitecore.EXG.Client
 
       return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
     }
-
 
     [System.Web.Http.HttpGet]
     public ActionResult Outcomes()
@@ -95,30 +97,45 @@ namespace Sitecore.EXG.Client
     [System.Web.Http.HttpGet]
     public ActionResult Overview()
     {
-      var output = "{" + "uniqueVisitorsNumber: {" + "name: 'Number of unique visitors',"
-                   + "value: 170" + "   }," + "generatedVisitsNumber: {"
-                   + "name: 'Number of visits generated (approx.)'," + "  value: 100500" + "}," + "bounceRate: {"
-                   + "name: 'Bounce rate'," + "  value: 0.5" + "}," + " percentageIdentifiedVisitors: {"
-                   + "name: 'Percentage identified visitors'," + "value: 0.2" + "}," + "peageviewsPerVisit: {"
-                   + "name: 'Pageviews per visit (avg)'," + "value: 4" + "}," + "timeSpentPerVisit: {"
-                   + "name: 'Time spent per page (avg)'," + "value: '00:30'" + "}," + "startDate: {"
-                   + "name: 'Start date'," + "value: '02/06/2015'" + "}," + "endDate: {"
+      var output = "{" + "uniqueVisitorsNumber: {" + "name: 'Number of unique visitors'," + "value: 170" + "},"
+                   + "generatedVisitsNumber: {" + "name: 'Number of visits generated (approx.)'," + "value: 100500"
+                   + "}," + "bounceRate: {" + "name: 'Bounce rate'," + "  value: 0.5" + "},"
+                   + " percentageIdentifiedVisitors: {" + "name: 'Percentage identified visitors'," + "value: 0.2"
+                   + "}," + "peageviewsPerVisit: {" + "name: 'Pageviews per visit (avg)'," + "value: 4" + "},"
+                   + "timeSpentPerVisit: {" + "name: 'Time spent per page (avg)'," + "value: '00:30'" + "},"
+                   + "startDate: {" + "name: 'Start date'," + "value: '02/06/2015'" + "}," + "endDate: {"
                    + "name: 'End date'," + "value: '16/06/2015'" + "}," + "dailyDistribution: ["
                    + "{name: 'Monday', value: 0.1 }," + "{name: 'Tuesday', value: 0.1 },"
                    + "{name: 'Wednesday', value: 0.1 }," + "{name: 'Thursday', value: 0.1 },"
                    + "{name: 'Friday', value: 0.1 }," + "{name: 'Saturday', value: 0.1 },"
                    + "{name: 'Sunday', value: 0.1 }" + "]," + "monthlyDistribution: ["
                    + "{name: 'January', value: 0.1 }," + "{name: 'February', value: 0.1 },"
-                   + "{name: 'March', value: 0.1 }," + "{name: 'April', value: 0.1 },"
-                   + "{name: 'May', value: 0.1 }," + "{name: 'June', value: 0.1 }," + "{name: 'July', value: 0.1 },"
-                   + "{name: 'August', value: 0.1 }," + "{name: 'September', value: 0.1 },"
-                   + "{name: 'October', value: 0.1 }," + "{name: 'November', value: 0.1 },"
-                   + "{name: 'December', value: 0.1 }" + "]," + "       trafficDistribution: ["
-                   + "{name: 'micro', value: 0.4 }," + "{name: 'website', value: 1 }" + "]," + "location: ["
-                   + "{name: 'Europe, Middle East, Africa', value: 0.3 }," + "{name: 'Asia Pacific', value: 0.1 },"
-                   + "{name: 'Americas', value: 0.6 }" + "]" + "}";
+                   + "{name: 'March', value: 0.1 }," + "{name: 'April', value: 0.1 }," + "{name: 'May', value: 0.1 },"
+                   + "{name: 'June', value: 0.1 }," + "{name: 'July', value: 0.1 }," + "{name: 'August', value: 0.1 },"
+                   + "{name: 'September', value: 0.1 }," + "{name: 'October', value: 0.1 },"
+                   + "{name: 'November', value: 0.1 }," + "{name: 'December', value: 0.1 }" + "],"
+                   + "trafficDistribution: [" + "{name: 'micro', value: 0.4 }," + "{name: 'website', value: 1 }" + "],"
+                   + "location: [" + "{name: 'Europe, Middle East, Africa', value: 0.3 },"
+                   + "{name: 'Asia Pacific', value: 0.1 }," + "{name: 'Americas', value: 0.6 }" + "]" + "}";
 
       return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
+    }
+
+    [System.Web.Http.HttpGet]
+    public ActionResult Jobs()
+    {
+
+      progress += 0.05;
+
+      if (progress > 1)
+      {
+        progress = 1;
+      }
+
+      var output = "{Id:123, CompletedVisitors:100, Segments:[], JobStatus:'Running', Progress: " + progress.ToString(CultureInfo.InvariantCulture) + ", CompletedVisits:501}";
+
+      return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
+
     }
 
   }
