@@ -132,7 +132,9 @@ namespace Sitecore.EXG.Client
         progress = 1;
       }
 
-      var output = "{Id:123, CompletedVisitors:100, Segments:[], JobStatus:'Running', Progress: " + progress.ToString(CultureInfo.InvariantCulture) + ", CompletedVisits:501}";
+      var output = "{Id:123, CompletedVisitors:100, Segments:[], JobStatus:'Running', Progress: " 
+        + progress.ToString(CultureInfo.InvariantCulture)
+        + ", CompletedVisits:501}";
 
       return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
 
