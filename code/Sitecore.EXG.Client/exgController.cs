@@ -77,17 +77,46 @@ namespace Sitecore.EXG.Client
     public ActionResult Campaigns()
     {
       var output = "{" + "traffic: {" + "name: 'Campaign traffic'," + "value: 0.5" + "}," + "items: ["
-                   + "{ name: '123', value: 0.1 }," + "{ name: 'ABC', value: 0.1 },"
-                   + "{ name: 'Social/Campaign', value: 0.1 }," + "{ name: 'Social/Facebook/Campaign', value: 0.1 },"
-                   + "{ name: 'Social/Facebook/Facebook Content Messages', value: 0.1 },"
-                   + "{ name: 'Social/Facebook/Facebook Goal Messages', value: 0.1 },"
-                   + "{ name: 'Social/Facebook/Facebook Share Buttons', value: 0.1 },"
-                   + "{ name: 'Social/Google Plus/Google Plus Share Buttons', value: 0.1 },"
-                   + "{ name: 'Social/LinkedIn/LinkedIn Share Buttons', value: 0.1 },"
-                   + "{ name: 'Social/Social Marketer/Social Marketer', value: 0.1 },"
-                   + "{ name: 'Social/Twitter/Twitter Content Messages', value: 0.1 },"
-                   + "{ name: 'Social/Twitter/Twitter Goal Messages', value: 0.1 },"
-                   + "{ name: 'Social/Twitter/Twitter Share Buttons', value: 0.1 }," + "]" + "}";
+                   + "{name: '123', value: 0.1 }," + "{name: 'ABC', value: 0.1 },"
+                   + "{name: 'Social/Campaign', value: 0.1 }," + "{name: 'Social/Facebook/Campaign', value: 0.1 },"
+                   + "{name: 'Social/Facebook/Facebook Content Messages', value: 0.1 },"
+                   + "{name: 'Social/Facebook/Facebook Goal Messages', value: 0.1 },"
+                   + "{name: 'Social/Facebook/Facebook Share Buttons', value: 0.1 },"
+                   + "{name: 'Social/Google Plus/Google Plus Share Buttons', value: 0.1 },"
+                   + "{name: 'Social/LinkedIn/LinkedIn Share Buttons', value: 0.1 },"
+                   + "{name: 'Social/Social Marketer/Social Marketer', value: 0.1 },"
+                   + "{name: 'Social/Twitter/Twitter Content Messages', value: 0.1 },"
+                   + "{name: 'Social/Twitter/Twitter Goal Messages', value: 0.1 },"
+                   + "{name: 'Social/Twitter/Twitter Share Buttons', value: 0.1 }," + "]" + "}";
+
+      return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
+    }
+
+    [System.Web.Http.HttpGet]
+    public ActionResult Overview()
+    {
+      var output = "{" + "uniqueVisitorsNumber: {" + "name: 'Number of unique visitors',"
+                   + "value: 170" + "   }," + "generatedVisitsNumber: {"
+                   + "name: 'Number of visits generated (approx.)'," + "  value: 100500" + "}," + "bounceRate: {"
+                   + "name: 'Bounce rate'," + "  value: 0.5" + "}," + " percentageIdentifiedVisitors: {"
+                   + "name: 'Percentage identified visitors'," + "value: 0.2" + "}," + "peageviewsPerVisit: {"
+                   + "name: 'Pageviews per visit (avg)'," + "value: 4" + "}," + "timeSpentPerVisit: {"
+                   + "name: 'Time spent per page (avg)'," + "value: '00:30'" + "}," + "startDate: {"
+                   + "name: 'Start date'," + "value: '02/06/2015'" + "}," + "endDate: {"
+                   + "name: 'End date'," + "value: '16/06/2015'" + "}," + "dailyDistribution: ["
+                   + "{name: 'Monday', value: 0.1 }," + "{name: 'Tuesday', value: 0.1 },"
+                   + "{name: 'Wednesday', value: 0.1 }," + "{name: 'Thursday', value: 0.1 },"
+                   + "{name: 'Friday', value: 0.1 }," + "{name: 'Saturday', value: 0.1 },"
+                   + "{name: 'Sunday', value: 0.1 }" + "]," + "monthlyDistribution: ["
+                   + "{name: 'January', value: 0.1 }," + "{name: 'February', value: 0.1 },"
+                   + "{name: 'March', value: 0.1 }," + "{name: 'April', value: 0.1 },"
+                   + "{name: 'May', value: 0.1 }," + "{name: 'June', value: 0.1 }," + "{name: 'July', value: 0.1 },"
+                   + "{name: 'August', value: 0.1 }," + "{name: 'September', value: 0.1 },"
+                   + "{name: 'October', value: 0.1 }," + "{name: 'November', value: 0.1 },"
+                   + "{name: 'December', value: 0.1 }" + "]," + "       trafficDistribution: ["
+                   + "{name: 'micro', value: 0.4 }," + "{name: 'website', value: 1 }" + "]," + "location: ["
+                   + "{name: 'Europe, Middle East, Africa', value: 0.3 }," + "{name: 'Asia Pacific', value: 0.1 },"
+                   + "{name: 'Americas', value: 0.6 }" + "]" + "}";
 
       return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
     }
