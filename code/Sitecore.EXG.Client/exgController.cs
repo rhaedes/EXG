@@ -4,7 +4,10 @@ using Sitecore.Services.Infrastructure.Web.Http;
 namespace Sitecore.EXG.Client
 {
   using System;
-  using System.Web.Http;
+  using System.Web.Mvc;
+
+  using Newtonsoft.Json;
+
 
   [ServicesController("ExgData")]
   public class exgController : ServicesApiController
@@ -17,15 +20,15 @@ namespace Sitecore.EXG.Client
       return getrandom.Next(0, 100).ToString();
     }
 
-    [HttpGet]
-    public string Dashboard()
+    [System.Web.Http.HttpGet]
+    public ActionResult Dashboard()
     {
-      var output = "{ data: { visitsPerChannel: [ " + "{ \"label\": \"LandingPages\", \"value\": " + GetRandomNumber()
+      var output = "{ \"data\": { \"visitsPerChannel\": [ " + "{ \"label\": \"LandingPages\", \"value\": " + GetRandomNumber()
                    + " }," + "{ \"label\": \"RefURLs\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Search\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"Campaigns\", \"value\": " + GetRandomNumber() + " },"
-                   + "{ \"label\": \"Other\", \"value\": " + GetRandomNumber() + " }" + "]," + "monthlyDistribution: ["
-                   + "{" + "key: \"Monthly Distribution\"," + "values: [" + "{ \"label\": \"January\", \"value\": "
+                   + "{ \"label\": \"Other\", \"value\": " + GetRandomNumber() + " }" + "]," + "\"monthlyDistribution\": ["
+                   + "{" + "\"key\": \"Monthly Distribution\"," + "\"values\": [" + "{ \"label\": \"January\", \"value\": "
                    + GetRandomNumber() + " }," + "{ \"label\": \"February\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"March\", \"value\":" + GetRandomNumber() + " },"
                    + "{ \"label\": \"April\", \"value\": " + GetRandomNumber() + " },"
@@ -36,13 +39,14 @@ namespace Sitecore.EXG.Client
                    + "{ \"label\": \"September\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"October\", \"value\": " + GetRandomNumber() + " },"
                    + "{ \"label\": \"November\", \"value\": " + GetRandomNumber() + " },"
-                   + "{ \"label\": \"December\", \"value\":" + GetRandomNumber() + " }" + "]" + "}" + "]" + "}";
+                   + "{ \"label\": \"December\", \"value\":" + GetRandomNumber() + " }" + "]" + "}" + "]" + "}}";
 
-      return output;
+
+      return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
     }
 
 
-    [HttpGet]
+    [System.Web.Http.HttpGet]
     public string Outcomes()
     {
       var output = " { id: 1, category: 'Identification', label: 'Contact Acquisition', value: 0.3 },"
