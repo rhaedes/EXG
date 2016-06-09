@@ -48,7 +48,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\app.js" />
+    <Content Include="sitecore\shell\client\Applications\EXG\assets\charts.css" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\grid.css" />
+    <Content Include="sitecore\shell\client\Applications\EXG\assets\nv.d3.min.css" />
     <Content Include="sitecore\shell\client\Applications\EXG\Layouts\Layouts\ReactLayout.cshtml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
