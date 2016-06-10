@@ -16,8 +16,9 @@ var jqxhr = $.getJSON(fileUrl, function (result) {
         jqxhr = $.getJSON(fileUrl, function (result) {
             window.EXG.Dictionary = result;
         })
-        .fail(function () {})
-        console.log("No english defined.");
+        .fail(function() {
+          console.log("No english defined.");
+          })        
         }); 
 
 function getParameterByName(name, url) {
