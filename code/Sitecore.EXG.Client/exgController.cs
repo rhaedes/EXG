@@ -121,11 +121,20 @@ namespace Sitecore.EXG.Client
       return new JsonResult { Data = JsonConvert.DeserializeObject(output) };
     }
 
+
+
+
+    [System.Web.Http.HttpPost]
     [System.Web.Http.HttpGet]
-    public ActionResult Jobs()
+    public ActionResult Jobs(string id)
     {
 
-      progress += 0.05;
+      if (id == "-")
+      {
+        progress = 0;
+      }
+
+    progress += 0.05;
 
       if (progress > 1)
       {
