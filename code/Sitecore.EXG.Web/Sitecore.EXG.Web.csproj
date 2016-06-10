@@ -50,6 +50,7 @@
     <Content Include="sitecore\shell\client\Applications\EXG\assets\app.js" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\grid.css" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\localization\LoadDictionary.js" />
+    <Content Include="sitecore\shell\client\Applications\EXG\assets\nv.d3.min.css" />
     <Content Include="sitecore\shell\client\Applications\EXG\Layouts\Layouts\ReactLayout.cshtml" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\app.js.map" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\localization\dictionaries\en.json" />
