@@ -1,7 +1,7 @@
 const url = window.location.href;
 const languageSelector = 'sc_lang';
 const dictionaryPath= '/sitecore/shell/client/Applications/EXG/assets/localization/dictionaries/';
-var language = getParameterByName(languageSelector, url) ;
+var language = getParameterByName(languageSelector, url) || "en";
 
 if (!window.EXG) {
     window.EXG = {};
