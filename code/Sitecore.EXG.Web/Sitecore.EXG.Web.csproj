@@ -49,7 +49,9 @@
     <None Include="packages.config" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\app.js" />
     <Content Include="sitecore\shell\client\Applications\EXG\assets\grid.css" />
+    <Content Include="sitecore\shell\client\Applications\EXG\assets\nv.d3.min.css" />
     <Content Include="sitecore\shell\client\Applications\EXG\Layouts\Layouts\ReactLayout.cshtml" />
+    <Content Include="sitecore\shell\client\Applications\EXG\assets\app.js.map" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -79,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.EXG.Client\Sitecore.EXG.Client.csproj">
+      <Project>{26a4087f-a6cf-4445-a650-f16b8b04d8ec}</Project>
+      <Name>Sitecore.EXG.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
